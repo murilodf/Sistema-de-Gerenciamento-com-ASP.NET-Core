@@ -1,7 +1,3 @@
-# Sistema de Controle de Medicacoes Hospitalares
-
-Projeto da Sprint 1 da disciplina Plataforma de Desenvolvimento de Software.
-
 ## Tema
 
 Sistema de Controle de Medicacoes Hospitalares.
