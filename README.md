@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 # Sistema de Controle de Medicacoes Hospitalares
 
 Projeto da Sprint 1 da disciplina Plataforma de Desenvolvimento de Software.
 
+=======
+>>>>>>> f9e883e0dbaf2eacbad36f6b5f3bb55d46b0883d
 ## Tema
 
 Sistema de Controle de Medicacoes Hospitalares.
@@ -48,6 +51,7 @@ Itens solicitados no enunciado:
 - Migration inicial
 - Seed de dados iniciais
 - Banco relacional MySQL
+<<<<<<< HEAD
 
 Os documentos da Sprint 1 estao na pasta `Docs`:
 
@@ -138,3 +142,5 @@ http://localhost:5041/swagger
 ## Observacao
 
 Para a entrega, subir este projeto em um repositorio GitHub e informar o link do repositorio conforme solicitado no enunciado.
+=======
+>>>>>>> f9e883e0dbaf2eacbad36f6b5f3bb55d46b0883d
