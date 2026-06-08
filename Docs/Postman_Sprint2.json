@@ -1,0 +1,255 @@
+{
+  "info": {
+    "name": "Sistema Medicacoes - Sprint 2",
+    "description": "Colecao Postman com endpoints CRUD da Sprint 2.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5041"
+    }
+  ],
+  "item": [
+    {
+      "name": "Setores",
+      "item": [
+        {
+          "name": "Listar setores",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Setores"
+          }
+        },
+        {
+          "name": "Buscar setor por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Setores/1"
+          }
+        },
+        {
+          "name": "Criar setor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pediatria\",\n  \"andar\": \"3\",\n  \"descricao\": \"Setor de atendimento infantil\"\n}"
+            },
+            "url": "{{baseUrl}}/api/Setores"
+          }
+        },
+        {
+          "name": "Atualizar setor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 3,\n  \"nome\": \"Pediatria Atualizada\",\n  \"andar\": \"3\",\n  \"descricao\": \"Setor atualizado\"\n}"
+            },
+            "url": "{{baseUrl}}/api/Setores/3"
+          }
+        },
+        {
+          "name": "Excluir setor",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/Setores/3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pacientes",
+      "item": [
+        {
+          "name": "Listar pacientes",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Pacientes"
+          }
+        },
+        {
+          "name": "Buscar paciente por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Pacientes/1"
+          }
+        },
+        {
+          "name": "Criar paciente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Almeida\",\n  \"cpf\": \"12345678900\",\n  \"dataNascimento\": \"1995-04-15T00:00:00\",\n  \"leito\": \"C303\",\n  \"telefone\": \"14977770000\",\n  \"setorId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/Pacientes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medicos",
+      "item": [
+        {
+          "name": "Listar medicos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Medicos"
+          }
+        },
+        {
+          "name": "Buscar medico por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Medicos/1"
+          }
+        },
+        {
+          "name": "Criar medico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Marina Costa\",\n  \"crm\": \"778899\",\n  \"especialidade\": \"Pediatria\",\n  \"telefone\": \"14966660000\"\n}"
+            },
+            "url": "{{baseUrl}}/api/Medicos"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medicamentos",
+      "item": [
+        {
+          "name": "Listar medicamentos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Medicamentos"
+          }
+        },
+        {
+          "name": "Buscar medicamento por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Medicamentos/1"
+          }
+        },
+        {
+          "name": "Criar medicamento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Paracetamol\",\n  \"dosagem\": \"750mg\",\n  \"viaAdministracao\": \"Oral\",\n  \"estoque\": 80\n}"
+            },
+            "url": "{{baseUrl}}/api/Medicamentos"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prescricoes",
+      "item": [
+        {
+          "name": "Listar prescricoes",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Prescricoes"
+          }
+        },
+        {
+          "name": "Buscar prescricao por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Prescricoes/1"
+          }
+        },
+        {
+          "name": "Criar prescricao",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataPrescricao\": \"2026-06-08T00:00:00\",\n  \"observacao\": \"Paciente estavel\",\n  \"medicoId\": 1,\n  \"pacienteId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/Prescricoes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PrescricaoMedicamentos",
+      "item": [
+        {
+          "name": "Listar itens de prescricao",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/PrescricaoMedicamentos"
+          }
+        },
+        {
+          "name": "Buscar item por id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/PrescricaoMedicamentos/1"
+          }
+        },
+        {
+          "name": "Criar item de prescricao",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantidade\": 1,\n  \"frequencia\": \"8 em 8 horas\",\n  \"horario\": \"08:00:00\",\n  \"prescricaoId\": 1,\n  \"medicamentoId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/PrescricaoMedicamentos"
+          }
+        }
+      ]
+    }
+  ]
+}
