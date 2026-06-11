@@ -16,6 +16,7 @@ public class MedicamentosController : ControllerBase
         _context = context;
     }
 
+    /// <summary>Lista todos os medicamentos cadastrados.</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<object>>> GetMedicamentos()
     {
@@ -34,6 +35,7 @@ public class MedicamentosController : ControllerBase
         return Ok(medicamentos);
     }
 
+    /// <summary>Busca um medicamento pelo id, incluindo usos em prescricoes.</summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<object>> GetMedicamento(int id)
     {
@@ -60,6 +62,7 @@ public class MedicamentosController : ControllerBase
         return medicamento is null ? NotFound("Medicamento nao encontrado.") : Ok(medicamento);
     }
 
+    /// <summary>Cadastra um novo medicamento no estoque.</summary>
     [HttpPost]
     public async Task<ActionResult<Medicamento>> PostMedicamento(Medicamento medicamento)
     {
@@ -74,6 +77,7 @@ public class MedicamentosController : ControllerBase
         return CreatedAtAction(nameof(GetMedicamento), new { id = medicamento.Id }, medicamento);
     }
 
+    /// <summary>Atualiza os dados de um medicamento existente.</summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutMedicamento(int id, Medicamento medicamento)
     {
@@ -98,6 +102,7 @@ public class MedicamentosController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>Exclui um medicamento, desde que ele nao esteja vinculado a prescricoes.</summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMedicamento(int id)
     {

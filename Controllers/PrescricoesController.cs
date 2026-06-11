@@ -16,6 +16,7 @@ public class PrescricoesController : ControllerBase
         _context = context;
     }
 
+    /// <summary>Lista todas as prescricoes cadastradas.</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<object>>> GetPrescricoes()
     {
@@ -36,6 +37,7 @@ public class PrescricoesController : ControllerBase
         return Ok(prescricoes);
     }
 
+    /// <summary>Busca uma prescricao pelo id, incluindo medico, paciente e medicamentos.</summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<object>> GetPrescricao(int id)
     {
@@ -66,6 +68,7 @@ public class PrescricoesController : ControllerBase
         return prescricao is null ? NotFound("Prescricao nao encontrada.") : Ok(prescricao);
     }
 
+    /// <summary>Cadastra uma nova prescricao para um paciente e medico existentes.</summary>
     [HttpPost]
     public async Task<ActionResult<Prescricao>> PostPrescricao(Prescricao prescricao)
     {
@@ -90,6 +93,7 @@ public class PrescricoesController : ControllerBase
         return CreatedAtAction(nameof(GetPrescricao), new { id = prescricao.Id }, prescricao);
     }
 
+    /// <summary>Atualiza os dados de uma prescricao existente.</summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutPrescricao(int id, Prescricao prescricao)
     {
@@ -119,6 +123,7 @@ public class PrescricoesController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>Exclui uma prescricao, desde que ela nao possua medicamentos vinculados.</summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePrescricao(int id)
     {

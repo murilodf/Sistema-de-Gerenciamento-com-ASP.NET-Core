@@ -16,6 +16,7 @@ public class SetoresController : ControllerBase
         _context = context;
     }
 
+    /// <summary>Lista todos os setores cadastrados.</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<object>>> GetSetores()
     {
@@ -34,6 +35,7 @@ public class SetoresController : ControllerBase
         return Ok(setores);
     }
 
+    /// <summary>Busca um setor pelo id, incluindo seus pacientes.</summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<object>> GetSetor(int id)
     {
@@ -58,6 +60,7 @@ public class SetoresController : ControllerBase
         return setor is null ? NotFound("Setor nao encontrado.") : Ok(setor);
     }
 
+    /// <summary>Cadastra um novo setor hospitalar.</summary>
     [HttpPost]
     public async Task<ActionResult<Setor>> PostSetor(Setor setor)
     {
@@ -67,6 +70,7 @@ public class SetoresController : ControllerBase
         return CreatedAtAction(nameof(GetSetor), new { id = setor.Id }, setor);
     }
 
+    /// <summary>Atualiza os dados de um setor existente.</summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutSetor(int id, Setor setor)
     {
@@ -86,6 +90,7 @@ public class SetoresController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>Exclui um setor, desde que ele nao possua pacientes vinculados.</summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteSetor(int id)
     {

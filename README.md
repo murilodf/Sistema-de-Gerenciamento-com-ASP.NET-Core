@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 # Sistema de Controle de Medicacoes Hospitalares
 
 Projeto da Sprint 1 da disciplina Plataforma de Desenvolvimento de Software.
 
+=======
+>>>>>>> f9e883e0dbaf2eacbad36f6b5f3bb55d46b0883d
 ## Tema
 
 Sistema de Controle de Medicacoes Hospitalares.
@@ -95,3 +98,76 @@ Status codes usados:
 Os testes sugeridos para Swagger estao em:
 
 - `Docs/Testes_Sprint2.md`
+
+## Entrega da Sprint 3
+
+Itens solicitados no enunciado:
+
+- Apresentacao para o professor
+- Documentacao via Swagger/OpenAPI
+- Versao final do projeto
+- Demonstracao do sistema rodando
+
+Melhorias feitas para a Sprint 3:
+
+- Swagger configurado com titulo, versao e descricao da API
+- Comentarios nos endpoints para melhorar a documentacao OpenAPI
+- Checklist da apresentacao criado
+- Roteiro de apresentacao dividido para 4 integrantes
+
+Arquivos da Sprint 3:
+
+- `Docs/Checklist_Sprint3.md`
+- `Docs/Roteiro_Apresentacao_Sprint3.md`
+
+Link principal para demonstracao:
+
+```txt
+http://localhost:5041/swagger
+```
+
+## Como rodar
+
+1. Confirme se o MySQL esta rodando na porta 3306.
+
+2. Confirme a connection string em `appsettings.json`.
+
+```json
+"DefaultConnection": "server=localhost;port=3306;database=medcontrol_db;user=medcontrol;password=medcontrol123"
+```
+
+3. Restaure os pacotes.
+
+```bash
+dotnet restore
+```
+
+4. Instale o Entity Framework CLI, se ainda nao tiver.
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+5. Rode a migration.
+
+```bash
+dotnet ef database update
+```
+
+6. Execute o projeto.
+
+```bash
+dotnet run --urls http://localhost:5041
+```
+
+7. Abra o Swagger.
+
+```txt
+http://localhost:5041/swagger
+```
+
+## Observacao
+
+Para a entrega, subir este projeto em um repositorio GitHub e informar o link do repositorio conforme solicitado no enunciado.
+=======
+>>>>>>> f9e883e0dbaf2eacbad36f6b5f3bb55d46b0883d

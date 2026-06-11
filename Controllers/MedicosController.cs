@@ -16,6 +16,7 @@ public class MedicosController : ControllerBase
         _context = context;
     }
 
+    /// <summary>Lista todos os medicos cadastrados.</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<object>>> GetMedicos()
     {
@@ -35,6 +36,7 @@ public class MedicosController : ControllerBase
         return Ok(medicos);
     }
 
+    /// <summary>Busca um medico pelo id, incluindo suas prescricoes.</summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<object>> GetMedico(int id)
     {
@@ -60,6 +62,7 @@ public class MedicosController : ControllerBase
         return medico is null ? NotFound("Medico nao encontrado.") : Ok(medico);
     }
 
+    /// <summary>Cadastra um novo medico.</summary>
     [HttpPost]
     public async Task<ActionResult<Medico>> PostMedico(Medico medico)
     {
@@ -69,6 +72,7 @@ public class MedicosController : ControllerBase
         return CreatedAtAction(nameof(GetMedico), new { id = medico.Id }, medico);
     }
 
+    /// <summary>Atualiza os dados de um medico existente.</summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutMedico(int id, Medico medico)
     {
@@ -88,6 +92,7 @@ public class MedicosController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>Exclui um medico, desde que ele nao possua prescricoes vinculadas.</summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMedico(int id)
     {
